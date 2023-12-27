@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz sobre a Revolução Francesa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .quiz-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .question {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .options label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #0073e6;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #005bbf;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Quiz sobre a Revolução Francesa</h1>
+
+        <div class="question">
+            <p>Pergunta 1: Quem foi o líder da Revolução Francesa?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="a">a) Luís XVI</label>
+                <label><input type="radio" name="q1" value="b">b) Napoleão Bonaparte</label>
+                <label><input type="radio" name="q1" value="c">c) Maria Antonieta</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>Pergunta 2: Qual evento marcou o início da Revolução Francesa?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="a">a) A tomada da Bastilha</label>
+                <label><input type="radio" name="q2" value="b">b) A execução de Luís XVI</label>
+                <label><input type="radio" name="q2" value="c">c) A Marcha das Mulheres a Versalhes</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>Pergunta 3: Qual documento foi adotado pela Assembleia Nacional em 1789?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="a">a) A Declaração dos Direitos do Homem e do Cidadão</label>
+                <label><input type="radio" name="q3" value="b">b) A Constituição de 1791</label>
+                <label><input type="radio" name="q3" value="c">c) O Código Napoleônico</label>
+            </div>
+        </div>
+
+        <button onclick="verificarRespostas()">Enviar Respostas</button>
+    </div>
+
+    <script>
+        function verificarRespostas() {
+            const respostas = {
+                q1: document.querySelector('input[name="q1"]:checked'),
+                q2: document.querySelector('input[name="q2"]:checked'),
+                q3: document.querySelector('input[name="q3"]:checked'),
+            };
+
+            let acertos = 0;
+
+            if (respostas.q1 && respostas.q1.value === "b") {
+                acertos++;
+            }
+            if (respostas.q2 && respostas.q2.value === "a") {
+                acertos++;
+            }
+            if (respostas.q3 && respostas.q3.value === "a") {
+                acertos++;
+            }
+
+            alert(`Você acertou ${acertos} de 3 perguntas.`);
+        }
+    </script>
+</body>
+</html>
